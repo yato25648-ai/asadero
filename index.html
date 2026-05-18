@@ -183,11 +183,7 @@ section.cat-section{padding:50px 0;}
 .cat-line{flex:1;height:2px;background:var(--rojo);}
 
 /* ── PRODUCT GRID ── */
-.product-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
-  gap:20px;
-}
+.product-grid{display:grid;grid-template-columns:1fr;gap:16px}
 
 .product-card{
   background:#fff;
@@ -233,9 +229,7 @@ section.cat-section{padding:50px 0;}
   font-size:0.78rem;color:var(--texto-suave);
   line-height:1.5;margin-bottom:12px;flex:1;
 }
-.product-price-row{
-  display:flex;align-items:center;justify-content:space-between;
-}
+.product-price-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
 .product-price{
   font-family:'Oswald',sans-serif;
   font-size:1.3rem;font-weight:700;
@@ -248,16 +242,7 @@ section.cat-section{padding:50px 0;}
 .price-opt-label{font-size:0.68rem;color:var(--texto-suave);font-weight:600;text-transform:uppercase;}
 .price-opt-val{font-family:'Oswald',sans-serif;font-size:1.1rem;font-weight:700;color:var(--rojo);}
 
-.btn-pedido{
-  display:flex;align-items:center;gap:6px;
-  background:#25D366;color:#fff;
-  font-family:'Oswald',sans-serif;
-  font-size:0.78rem;font-weight:600;letter-spacing:1px;
-  padding:7px 12px;border-radius:3px;
-  text-decoration:none;
-  transition:background .18s;
-  white-space:nowrap;
-}
+.btn-pedido{display:inline-flex;align-items:center;gap:6px;background:var(--rojo2);color:#fff;padding:10px 16px;border-radius:6px;font-weight:600;font-size:0.9rem;white-space:nowrap}
 .btn-pedido:hover{background:#128C7E;}
 
 /* ── COMBO SECTION ── */
@@ -395,13 +380,13 @@ footer{
 .section-alt{background:#fff;}
 
 @media(max-width:640px){
-  .product-grid{grid-template-columns:repeat(2,1fr);}
+  .product-grid{display:grid;grid-template-columns:1fr;gap:16px}
   .hero{height:auto;min-height:380px;padding:40px 0;}
   footer{flex-direction:column;text-align:center;}
   .footer-copy{text-align:center;}
 }
 @media(max-width:380px){
-  .product-grid{grid-template-columns:1fr;}
+  .product-grid{display:grid;grid-template-columns:1fr;gap:16px}
 }
 </style>
 </head>
@@ -1067,6 +1052,7 @@ footer{
 </script>
 </body>
 </html>
+
 
 
 
