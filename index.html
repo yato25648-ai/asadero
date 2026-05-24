@@ -929,7 +929,7 @@ footer{
     var html = '';
     _carrito.forEach(function(item){
       html += '<div class="carrito-item">'
-        +'<div class="carrito-item-nombre">'+item.nombre+'</div>'
+        +'<div class="carrito-item-nombre">'+item.nombre+' <button onclick="cambiarCantidad(item.nombre,-999)" style="background:none;border:none;color:#c0280e;cursor:pointer;font-weight:bold;font-size:1rem">✕</button></div>'
         +'<div class="carrito-item-qty">'
         +'<button class="qty-btn" onclick="cambiarCantidad('+JSON.stringify(item.nombre)+',-1)">−</button>'
         +'<span class="qty-num">'+item.cantidad+'</span>'
