@@ -931,9 +931,9 @@ footer{
       html += '<div class="carrito-item">'
         +'<div class="carrito-item-nombre">'+item.nombre+'</div>'
         +'<div class="carrito-item-qty">'
-        +'<button class="qty-btn" onclick="cambiarCantidad(''+item.nombre+'',-1)">−</button>'
+        +'<button class="qty-btn" onclick="cambiarCantidad('+JSON.stringify(item.nombre)+',-1)">−</button>'
         +'<span class="qty-num">'+item.cantidad+'</span>'
-        +'<button class="qty-btn" onclick="cambiarCantidad(''+item.nombre+'',1)">+</button>'
+        +'<button class="qty-btn" onclick="cambiarCantidad('+JSON.stringify(item.nombre)+',1)">+</button>'
         +'</div>'
         +'<div class="carrito-item-precio">$'+(item.precio*item.cantidad).toLocaleString('es-CO')+'</div>'
         +'</div>';
