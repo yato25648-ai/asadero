@@ -931,9 +931,9 @@ footer{
       html += '<div class="carrito-item">'
         +'<div class="carrito-item-nombre">'+item.nombre+'</div>'
         +'<div class="carrito-item-qty">'
-        +'<button class="qty-btn" onclick="cambiarCantidad(idx,-1)">−</button>'
+        +'<button class="qty-btn" onclick="cambiarCantidad('+JSON.stringify(item.nombre)+',-1)">−</button>'
         +'<span class="qty-num">'+item.cantidad+'</span>'
-        +'<button class="qty-btn" onclick="cambiarCantidad(idx,1)">+</button>'
+        +'<button class="qty-btn" onclick="cambiarCantidad('+JSON.stringify(item.nombre)+',1)">+</button>'
         +'</div>'
         +'<div class="carrito-item-precio">$'+(item.precio*item.cantidad).toLocaleString('es-CO')+'</div>'
         +'</div>';
@@ -1042,7 +1042,7 @@ footer{
       var nombre=card?card.querySelector('.product-name').textContent.trim():'Producto';
       var precioStr=card?card.querySelector('.product-price').textContent.trim():'0';
       var precio=parseInt(precioStr.replace(/[^0-9]/g,''))||0;
-      agregarAlCarrito(nombre,precio); e.stopPropagation();
+      agregarAlCarrito(nombre,precio);
       var btn=this;
       btn.textContent='✓ Agregado';
       btn.style.background='#2e7d32';
