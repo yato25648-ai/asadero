@@ -1034,7 +1034,7 @@ footer{
 
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){cerrarModalPedido();cerrarCarrito();}});
 
-  document.querySelectorAll(".price-opt-label .btn-pedido").forEach(function(b){b.addEventListener("click",function(e){e.stopPropagation();window.open(b.href,"_blank");e.preventDefault();});});document.querySelectorAll('.btn-pedido').forEach(function(btn){
+  document.querySelectorAll('.btn-pedido').forEach(function(btn){
     btn.addEventListener('click',function(e){
       e.preventDefault();
       e.stopPropagation();
