@@ -931,9 +931,9 @@ footer{
       html += '<div class="carrito-item">'
         +'<div class="carrito-item-nombre">'+item.nombre+'</div>'
         +'<div class="carrito-item-qty">'
-        +'<button class="qty-btn" onclick="cambiarCantidad('+idx+',-1)">−</button>'
+        +'<button class="qty-btn" data-nombre="'+item.nombre+'" data-delta="-1" onclick="var n=this.getAttribute(\'data-nombre\');var d=parseInt(this.getAttribute(\'data-delta\'));cambiarCantidad(n,d)">−</button>'
         +'<span class="qty-num">'+item.cantidad+'</span>'
-        +'<button class="qty-btn" onclick="cambiarCantidad('+idx+',1)">+</button>'
+        +'<button class="qty-btn" data-nombre="'+item.nombre+'" data-delta="1" onclick="var n=this.getAttribute(\'data-nombre\');var d=parseInt(this.getAttribute(\'data-delta\'));cambiarCantidad(n,d)">+</button>'
         +'</div>'
         +'<div class="carrito-item-precio">$'+(item.precio*item.cantidad).toLocaleString('es-CO')+'</div>'
         +'</div>';
