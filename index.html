@@ -927,7 +927,7 @@ footer{
       flotante.classList.add('visible');
     }
     var html = '';
-    _carrito.forEach(function(item){
+    _carrito.forEach(function(item,idx){
       html += '<div class="carrito-item">'
         +'<div class="carrito-item-nombre">'+item.nombre+'</div>'
         +'<div class="carrito-item-qty">'
@@ -960,7 +960,7 @@ footer{
     cerrarCarrito();
     var html='';
     var total=0;
-    _carrito.forEach(function(item){
+    _carrito.forEach(function(item,idx){
       html+='<div class="mp-resumen-item"><span>'+item.cantidad+'x '+item.nombre+'</span><span>$'+(item.precio*item.cantidad).toLocaleString('es-CO')+'</span></div>';
       total+=item.precio*item.cantidad;
     });
@@ -1017,7 +1017,7 @@ footer{
     if(esConj)dir+=(torre?', '+torre:'')+(apto?', Apto '+apto:'');
     var msg='🐔 *PEDIDO - Surtidora de Aves 22*\n\n';
     msg+='📋 *Productos:*\n';
-    _carrito.forEach(function(item){msg+='• '+item.cantidad+'x '+item.nombre+' — $'+( item.precio*item.cantidad).toLocaleString('es-CO')+'\n';});
+    _carrito.forEach(function(item,idx){msg+='• '+item.cantidad+'x '+item.nombre+' — $'+( item.precio*item.cantidad).toLocaleString('es-CO')+'\n';});
     msg+='\n👤 *Nombre:* '+nombre+'\n';
     msg+='📱 *Celular:* '+celular+'\n';
     msg+='📍 *Barrio:* '+barrio+'\n';
