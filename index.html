@@ -1050,7 +1050,35 @@ footer{
     });
   });
 </script>
-<div style="text-align:center;padding:16px;font-size:0.75rem;color:#aaa;font-family:'Oswald',sans-serif;letter-spacing:1px;">Diseñado por <strong style="color:#c0280e;">Mario Bonilla</strong></div></body>
+<div style="text-align:center;padding:16px;font-size:0.75rem;color:#aaa;font-family:'Oswald',sans-serif;letter-spacing:1px;">Diseñado por <strong style="color:#c0280e;">Mario Bonilla</strong></div><script>
+function getFechaHora() {
+  var ahora = new Date();
+  var dias = ['Domingo','Lunes','Martes','Miercoles','Jueves','Viernes','Sabado'];
+  var meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+  var dia = dias[ahora.getDay()];
+  var fecha = dia + ' ' + ahora.getDate() + ' de ' + meses[ahora.getMonth()] + ' de ' + ahora.getFullYear();
+  var h = ahora.getHours();
+  var m = ahora.getMinutes().toString().padStart(2,'0');
+  var ampm = h >= 12 ? 'PM' : 'AM';
+  h = h % 12 || 12;
+  return ' | Fecha: ' + fecha + ' | Hora: ' + h + ':' + m + ' ' + ampm;
+}
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('a[href*="wa.me/573222273495"]').forEach(function(el) {
+    var href = el.getAttribute('href');
+    var match = href.match(/[?&]text=([^&]*)/);
+    if (match) {
+      var textoOriginal = decodeURIComponent(match[1]);
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        var mensaje = textoOriginal + getFechaHora();
+        window.open('https://wa.me/573222273495?text=' + encodeURIComponent(mensaje), '_blank');
+      });
+    }
+  });
+});
+</script>
+</body>
 </html>
 
 
